@@ -1,1 +1,3 @@
 # Deliveristo
+Hello!
+I hope your doing well. I have given the coding challenge a quick try. I have fetched all the breeds and have fetched a random image for each breed name. SO i can display each breed along with its image. I have also given options below to view more images of the same breed or check for any sub breeds. if user clicks on view more images he can go to the next screen and look at more images and if he goes to sub breeds than I check if any sub breed exists and I proceed accordingly. If sub breed exists I show them along with names and images and an option to view more images of the sub breed as well. I have also given a search bar in the main screen so user can search for a specific dog he has in mind because there are alot of entries.

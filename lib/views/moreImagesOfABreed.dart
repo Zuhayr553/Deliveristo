@@ -96,9 +96,31 @@ class _GetImagesByBreedState extends State<GetImagesByBreed> {
                                     12.0), // Adjust the radius as needed
                                 child: Image.network(
                                   imageByBreed.message![index],
-                                  // height: Get.height * 0.35,
-                                  // width: Get.width * 0.35,
                                   fit: BoxFit.cover,
+                                  width: double.infinity,
+                                  height: double.infinity,
+                                  loadingBuilder: (BuildContext context,
+                                      Widget child,
+                                      ImageChunkEvent? loadingProgress) {
+                                    if (loadingProgress == null) {
+                                      return child;
+                                    } else {
+                                      return Center(
+                                        child: CircularProgressIndicator(
+                                          color: white,
+                                          value: loadingProgress
+                                                      .expectedTotalBytes !=
+                                                  null
+                                              ? loadingProgress
+                                                      .cumulativeBytesLoaded /
+                                                  (loadingProgress
+                                                          .expectedTotalBytes ??
+                                                      1)
+                                              : null,
+                                        ),
+                                      );
+                                    }
+                                  },
                                 ),
                               ),
                             ),

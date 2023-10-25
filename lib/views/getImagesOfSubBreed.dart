@@ -59,13 +59,32 @@ class _GetImagesByBreedAndSubBreedState
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                        child: Text(
-                          widget.subBreedName,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 26,
-                              color: brown,
-                              fontWeight: FontWeight.w700),
+                        child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                listOfAllSubBreedsImages =
+                                    ListOfAllSubBreedsImages();
+                                Get.back();
+                              },
+                              child: Icon(
+                                Icons.arrow_back,
+                                color: brown,
+                                size: 25,
+                              ),
+                            ),
+                            const Spacer(),
+                            Text(
+                              widget.subBreedName,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 26,
+                                  color: brown,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            const Spacer(),
+                          ],
                         ),
                       ),
                       SizedBox(

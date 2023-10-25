@@ -53,13 +53,31 @@ class _GetImagesByBreedState extends State<GetImagesByBreed> {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                        child: Text(
-                          widget.breedName,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 26,
-                              color: brown,
-                              fontWeight: FontWeight.w700),
+                        child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                imageByBreed = ImageByBreed();
+                                Get.back();
+                              },
+                              child: Icon(
+                                Icons.arrow_back,
+                                color: brown,
+                                size: 25,
+                              ),
+                            ),
+                            const Spacer(),
+                            Text(
+                              widget.breedName,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 26,
+                                  color: brown,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            const Spacer(),
+                          ],
                         ),
                       ),
                       SizedBox(
